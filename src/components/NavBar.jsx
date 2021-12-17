@@ -12,6 +12,7 @@ const NavBar = ({
   movilResponsiveButton,
   responsiveButton,
 }) => {
+  const {userData} = useUser();
   const searchSVG = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +24,7 @@ const NavBar = ({
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
-      class="feather feather-search"
+      className="feather feather-search"
     >
       <circle cx="11" cy="11" r="8"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -40,7 +41,7 @@ const NavBar = ({
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
-      class="feather feather-bell"
+      className="feather feather-bell"
     >
       <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
       <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
@@ -57,13 +58,13 @@ const NavBar = ({
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
-      class="feather feather-settings"
+      className="feather feather-settings"
     >
       <circle cx="12" cy="12" r="3"></circle>
       <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
     </svg>
   );
-  const { userData } = useUser();
+ 
   return (
     <>
       {/* <div className="flex flex-row justify-between items-center shadow border-gray-100 bg-white absolute w-full h-22 z-20 text-gray-50 text-xs"> */}
@@ -127,18 +128,20 @@ const NavBar = ({
             ></button>
           </div>
         </div>
-        {popupInfoProfile ? <PopupNavbar /> : <></>}
+        {popupInfoProfile ? <PopupNavbar userData={userData} /> : <></>}
       </div>
     </>
   );
 };
 
-const PopupNavbar = () => {
+const PopupNavbar = ({userData}) => {
   return (
     <div className="flex flex-col bg-white w-44 absolute right-10 top-20 rounded-lg border border-gray-75 pt-2 pb-2">
+      <Link to={`/admin/edit/user/${userData._id}`}>
       <li className="flex hover:bg-gray-100 items-center h-6 py-4 pl-3">
         <span>Perfil</span>
       </li>
+        </Link>
       <div className="h-0.5 bg-gray-100 my-2"></div>
       <Logouth />
     </div>

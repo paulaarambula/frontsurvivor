@@ -53,7 +53,6 @@ const EditInscriptions = () => {
     if (queryError) {
       alerts.alertErrorMessage("Error al cambiar el estado de la inscripcioón");
     }
-    
   }, [queryError]);
 
   if (queryLoading) {

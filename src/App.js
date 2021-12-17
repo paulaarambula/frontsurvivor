@@ -27,6 +27,11 @@ import Login from "./pages/auth/login";
 import jwt_decode from "jwt-decode";
 import Template from "./pages/TemplateLayouth";
 import EditProject from "./pages/project/EditProject";
+import InscriptionsIndex from "./pages/inscriptions/InscriptionsIndex.jsx"
+import EditInscriptions from "./pages/inscriptions/EditInscriptions";
+import AdvancementIndex from "./pages/advancement/AdvancementIndex";
+import EditAdvancement from "./pages/advancement/EditAdvancement";
+import Testk from "./pages/project/Testk";
 
 // const httpLink = createHttpLink({
 //   uri: "https://api-proyecta-tic.herokuapp.com/graphql"
@@ -88,8 +93,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/template" element={<Template />} />
+                <Route path="/auth/register" element={<Register />} />
                 <Route path="/auth" element={<LayoutAuth />}>
-                  <Route path="register" element={<Register />} />
                   <Route path="login" element={<Login />} />
                 </Route>
                 <Route path="/admin/index" element={<AdminIndex />} />
@@ -101,6 +106,11 @@ function App() {
                   <Route path="user/index" element={<IndexUsers />} />
                   <Route path="edit/user/:_id" element={<EditUser />} />
                   <Route path="edit/project/:_id" element={<EditProject/>} />
+                  <Route path="edit/inscriptions/:_id" element={<EditInscriptions/>} />
+                  <Route path="inscriptions/index" element={<InscriptionsIndex/>} />
+                  <Route path="advancement/index" element={<AdvancementIndex/>}/>
+                  <Route path="edit/advancement/:_id" element={<EditAdvancement/>}/>
+                  <Route path="test" element={<Testk/>}/>
                 </Route>
              
               </Routes>

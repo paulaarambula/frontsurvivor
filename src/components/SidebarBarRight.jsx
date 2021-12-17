@@ -3,7 +3,7 @@ import React from "react";
 
 const ItemsSidebarRight = {
     user: [
-      ["@", "itemuser1"],
+      ["@", "item_user1"],
       ["@", "item_user2"],
       ["@", "item_user3"],
     ],
@@ -13,6 +13,16 @@ const ItemsSidebarRight = {
       ["@", "item_project3"],
     ],
     dashboard: [
+      ["@", "item_dashboard1"],
+      ["@", "item_dashboard2"],
+      ["@", "item_dashboard3"],
+    ],
+    inscription: [
+      ["@", "item_dashboard1"],
+      ["@", "item_dashboard2"],
+      ["@", "item_dashboard3"],
+    ],
+    advance: [
       ["@", "item_dashboard1"],
       ["@", "item_dashboard2"],
       ["@", "item_dashboard3"],

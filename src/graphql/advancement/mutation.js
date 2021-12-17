@@ -20,4 +20,21 @@ const CREATE_ADVANCEMENT = gql`
   }
 `;
 
-export { CREATE_ADVANCEMENT };
+const EDIT_ADVANCEMENT_BY_ID = gql`
+  mutation Mutation(
+    $_id: String!
+    $description: String
+    $observations: [String]!
+  ) {
+    editAdvancement(
+      _id: $_id
+      description: $description
+      observations: $observations
+    ) {
+      description
+      observations
+    }
+  }
+`;
+
+export { CREATE_ADVANCEMENT, EDIT_ADVANCEMENT_BY_ID };

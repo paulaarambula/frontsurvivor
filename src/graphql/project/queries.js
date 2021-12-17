@@ -22,9 +22,27 @@ const GET_PROJECTS = gql`
       startDate
       statusProject
       stageProject
+      leader {
+        _id
+      }
     }
   }
 `;
+
+const GET_PROJECTS_BY_LEADER = gql`
+query ListProjectLeader($leader: String!) {
+  ListProjectLeader(leader: $leader) {
+      _id
+      nameProject
+      budget
+      startDate
+      statusProject
+      stageProject
+  }
+}
+`;
+
+
 
 const GET_PROJECT_BY_ID = gql`
   query DetailProject($_id: String!) {
@@ -48,12 +66,14 @@ const GET_PROJECT_BY_ID = gql`
         }
       }
       inscription {
+        _id
         dateStart
         dateEnd
         student {
           name
           lastname
         }
+        statusInscription
       }
       objective {
         description
@@ -63,4 +83,4 @@ const GET_PROJECT_BY_ID = gql`
   }
 `;
 
-export { GET_PROJECTS, GET_PROJECT_BY_ID };
+export { GET_PROJECTS, GET_PROJECT_BY_ID, GET_PROJECTS_BY_LEADER };

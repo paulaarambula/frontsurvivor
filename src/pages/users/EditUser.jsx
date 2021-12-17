@@ -9,10 +9,13 @@ import DropDown from "../../components/DropDown";
 import Header from "../../components/Header";
 import useFormData from "../../hook/useFormData";
 import alerts from "../../utils/iziToast/alerts";
-import { Enum_Status } from "../../utils/enum";
+import { Enum_Status, Enum_Status_Filter_Leader } from "../../utils/enum";
+import PrivateComponent from "../../components/PrivateComponents";
+import { useUser } from "../../context/user";
 
 const EditUser = () => {
   const { form, formData, updateFormData } = useFormData(null);
+  const {userData} = useUser();
   const _id_  = useParams();
   const _id =  _id_["_id"]
   const {
@@ -37,7 +40,6 @@ const EditUser = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    // console.log("formData, ", formData)
     editUser({
       variables: {
         _id,
@@ -54,6 +56,7 @@ const EditUser = () => {
       alerts.alertErrorMessage("Error ejecutar la consulta");
     }
   }, [queryError, mutationError]);
+
 
   if (queryLoading) {
     return <div>Cargando....</div>;
@@ -77,6 +80,7 @@ const EditUser = () => {
                 required={true}
                 label="Nombre"
                 defaultValue={queryData.User.name}
+                disabled={userData.rol !== "ESTUDIANTE" ? true : false }
               />
               <Input
                 type="text"
@@ -84,6 +88,7 @@ const EditUser = () => {
                 required={true}
                 label="Apellido"
                 defaultValue={queryData.User.lastname}
+                disabled={userData.rol !== "ESTUDIANTE" ? true : false}
               />
               <Input
                 type="text"
@@ -91,6 +96,7 @@ const EditUser = () => {
                 required={true}
                 label="Identificación"
                 defaultValue={queryData.User.identification}
+                disabled={userData.rol !== "ESTUDIANTE" ? true : false}
               />
               <Input
                 type="text"
@@ -98,20 +104,23 @@ const EditUser = () => {
                 required={true}
                 label="Email"
                 defaultValue={queryData.User.email}
+                disabled={userData.rol !== "ESTUDIANTE" ? true : false}
               />
               <Input
                 type="text"
                 label="Rol"
                 defaultValue={queryData.User.rol}
-                disabled={true}
+                disabled={ true }
               />
+              <PrivateComponent rolesList={["ADMINISTRADOR", "LIDER"]}>
               <DropDown
                 label="Estado"
                 name="status"
                 defaultValue={queryData.User.status}
                 required={true}
-                options={Enum_Status}
+                options={userData.rol === "ADMINISTRADOR" ? Enum_Status : Enum_Status_Filter_Leader }
               />
+              </PrivateComponent>
               <ButtonLoading
                 nameButton="Guardar"
                 type="submit"

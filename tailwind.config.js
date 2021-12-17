@@ -26,6 +26,7 @@ module.exports = {
         "gray-b": "#585858",
         "gray-c": "#8f8f8f",
         "gray-d": "#f9f9f9",
+        "blue-a": "#4556ac",
       },
       height: {
         21: "5.25rem",
@@ -44,6 +45,7 @@ module.exports = {
         27: "6.75rem",
         29: "7.25rem",
         30: "7.5rem",
+        128: '32rem',
         "1/24": "4.166666666666666%",
         "2/24": "8.333333333333332%",
         "3/24": "12.5%",
@@ -86,7 +88,8 @@ module.exports = {
       "tic-50": "#ba7eaf",
       "tic-250": "#e0b9d5",
       },
-      fontFamily: ["Quicksand", "sans-serif"],
+      fontFamily:{
+        Nunito: ["Nunito Sans", "sans-serif"]},
       inset: {
         '25': '6.25rem',
         '26': '6.5rem',
@@ -103,8 +106,6 @@ module.exports = {
       "tic-75": "#985295",
       "tic-50": "#ba7eaf",
       "tic-25": "#e0b9d5",
-      
-
       },
       fontSize: {
         "xxs":".5rem",

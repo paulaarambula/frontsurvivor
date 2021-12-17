@@ -34,6 +34,10 @@ const Register = () => {
     }
   }, [mutationData, setToken, navegate]);
   return (
+    <div className="flex justify-center bg-cover bg-center h-screen items-center aling-center font-nunito" style={{backgroundImage: 'url("https://gogo-react.coloredstrategies.com/static/media/balloon-lg.c94920d9.jpg")'}}>
+    <div className="text-xs text-gray-50">
+        
+
     <div className="p-6 bg-white rounded-lg  shadow-lg">
       <div className="flex flex-col text-2xl text-black items-center my-3 font-bold">
         <h5>Regístrate</h5>
@@ -53,6 +57,9 @@ const Register = () => {
         <Input type="password" label="Contraseña" name="password" required />
         <Button_1 nameButton="Registrar" type="submit" />
       </form>
+    </div>
+    </div>
+    
     </div>
   );
 };

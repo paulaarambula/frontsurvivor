@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import alerts from "../../utils/iziToast/alerts";
 import { Enum_Rol } from "../../utils/enum";
 import { Enum_Status } from "../../utils/enum";
+import PrivateRoute from "../../components/PrivateRoute"
+import PrivateComponent from "../../components/PrivateComponents";
+
 
 const IndexUsers = () => {
   const sx = "15";
@@ -42,6 +45,7 @@ const IndexUsers = () => {
 
   return (
     <>
+     <PrivateRoute rolesList={["LIDER", "ADMINISTRADOR"]}>
       <Header title={"Usuarios"} />
       <div className="text-xs pb-1 divide-x divide-gray-500">
         <div className="bg-white rounded-lg shadow-md px-8 py-8 divide-y divide-gray-100">
@@ -56,7 +60,9 @@ const IndexUsers = () => {
                 <th className="py-4">Email</th>
                 <th className="py-4">Rol</th>
                 <th className="py-4">Estado</th>
+                <PrivateComponent rolesList={["ADMINISTRADOR", "LIDER"]}>
                 <th className="py-4">Opciones</th>
+                </PrivateComponent>
               </tr>
             </thead>
             <tbody>
@@ -71,11 +77,14 @@ const IndexUsers = () => {
                         <td className="py-4">{u.email}</td>
                         <td className="py-4">{Enum_Rol[u.rol]}</td>
                         <td className="py-4">{Enum_Status[u.status]}</td>
+                        <PrivateComponent rolesList={["ADMINISTRADOR", "LIDER"]}>
                         <td className="py-4">
                           <Link to={`/admin/edit/user/${u._id}`}>
                             <span>{edit}</span>
                           </Link>
                         </td>
+                        </PrivateComponent>
+                       
                       </tr>
                     );
                   })}
@@ -87,6 +96,7 @@ const IndexUsers = () => {
           </table>
         </div>
       </div>
+      </PrivateRoute>
     </>
   );
 };

@@ -11,6 +11,7 @@ import useFormData from "../../hook/useFormData";
 import alerts from "../../utils/iziToast/alerts";
 import { useUser } from "../../context/user";
 import { Link } from "react-router-dom";
+import PrivateRoute from "../../components/PrivateRoute";
 
 const CreateProject = () => {
   const { userData } = useUser();
@@ -28,7 +29,7 @@ const CreateProject = () => {
     const _id = { leader: userData._id };
     formData.budget = parseFloat(formData.budget);
     const { objectiveGeneral, objectiveEspecific, ...data } = formData;
-    const { nameProject, budget, startDate, endDate, ...dataObjective } =
+    const { nameProject, budget, ...dataObjective } =
       formData;
     const o = {
       objective: [
@@ -77,7 +78,7 @@ const CreateProject = () => {
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
-      class="feather feather-plus-circle"
+      className="feather feather-plus-circle"
     >
       <circle cx="12" cy="12" r="10"></circle>
       <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -85,6 +86,7 @@ const CreateProject = () => {
     </svg>
   );
   return (
+    <PrivateRoute rolesList={["LIDER"]}>
     <Card>
       <TitleCard title="Nuevo Proyecto" />
       <Line />
@@ -112,24 +114,6 @@ const CreateProject = () => {
             />
           </div>
         </div>
-        <div className="flex flex-row">
-          <div className="flex-1 mr-1">
-            <Input
-              label="Fecha de inicio"
-              type="date"
-              name="startDate"
-              required="true"
-            />
-          </div>
-          <div className="flex-1 ml-1">
-            <Input
-              label="Fecha de finalización"
-              type="date"
-              name="endDate"
-              required="true"
-            />
-          </div>
-        </div>
         <Line />
         <TextArea
           label="Objetivo General"
@@ -148,6 +132,7 @@ const CreateProject = () => {
         <ButtonLoading nameButton="Guardar" type="submit" />
       </form>
     </Card>
+    </PrivateRoute>
   );
 };
 

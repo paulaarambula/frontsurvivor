@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Quicksand&display=swap');
 
 /*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com */
 
@@ -7098,6 +7098,10 @@ video {
 
 .w-96{
   width: 24rem;
+}
+
+.w-128{
+  width: 32rem;
 }
 
 .w-auto{
@@ -16361,6 +16365,11 @@ video {
   background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
 }
 
+.bg-blue-a{
+  --tw-bg-opacity: 1;
+  background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent{
   background-color: transparent;
 }
@@ -16817,6 +16826,11 @@ video {
 .group:hover .group-hover\:bg-gray-d{
   --tw-bg-opacity: 1;
   background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-blue-a{
+  --tw-bg-opacity: 1;
+  background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within{
@@ -17277,6 +17291,11 @@ video {
   background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-blue-a:focus-within{
+  --tw-bg-opacity: 1;
+  background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover{
   background-color: transparent;
 }
@@ -17733,6 +17752,11 @@ video {
 .hover\:bg-gray-d:hover{
   --tw-bg-opacity: 1;
   background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+}
+
+.hover\:bg-blue-a:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
 }
 
 .focus\:bg-transparent:focus{
@@ -18193,6 +18217,11 @@ video {
   background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
 }
 
+.focus\:bg-blue-a:focus{
+  --tw-bg-opacity: 1;
+  background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+}
+
 .disabled\:bg-transparent:disabled{
   background-color: transparent;
 }
@@ -18649,6 +18678,11 @@ video {
 .disabled\:bg-gray-d:disabled{
   --tw-bg-opacity: 1;
   background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+}
+
+.disabled\:bg-blue-a:disabled{
+  --tw-bg-opacity: 1;
+  background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
 }
 
 .bg-opacity-0{
@@ -23552,14 +23586,6 @@ video {
   vertical-align: text-bottom;
 }
 
-.font-0{
-  font-family: Quicksand;
-}
-
-.font-1{
-  font-family: sans-serif;
-}
-
 .font-sans{
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -23570,6 +23596,10 @@ video {
 
 .font-mono{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.font-Nunito{
+  font-family: Nunito Sans, sans-serif;
 }
 
 .text-xs{
@@ -36143,6 +36173,10 @@ video {
     width: 24rem;
   }
 
+  .sm\:w-128{
+    width: 32rem;
+  }
+
   .sm\:w-auto{
     width: auto;
   }
@@ -45373,6 +45407,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -45829,6 +45868,11 @@ video {
   .group:hover .sm\:group-hover\:bg-gray-d{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within{
@@ -46289,6 +46333,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-blue-a:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -46745,6 +46794,11 @@ video {
   .sm\:hover\:bg-gray-d:hover{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .sm\:hover\:bg-blue-a:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .sm\:focus\:bg-transparent:focus{
@@ -47205,6 +47259,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .sm\:focus\:bg-blue-a:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .sm\:disabled\:bg-transparent:disabled{
     background-color: transparent;
   }
@@ -47661,6 +47720,11 @@ video {
   .sm\:disabled\:bg-gray-d:disabled{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .sm\:disabled\:bg-blue-a:disabled{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .sm\:bg-opacity-0{
@@ -52564,14 +52628,6 @@ video {
     vertical-align: text-bottom;
   }
 
-  .sm\:font-0{
-    font-family: Quicksand;
-  }
-
-  .sm\:font-1{
-    font-family: sans-serif;
-  }
-
   .sm\:font-sans{
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -52582,6 +52638,10 @@ video {
 
   .sm\:font-mono{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .sm\:font-Nunito{
+    font-family: Nunito Sans, sans-serif;
   }
 
   .sm\:text-xs{
@@ -65143,6 +65203,10 @@ video {
     width: 24rem;
   }
 
+  .md\:w-128{
+    width: 32rem;
+  }
+
   .md\:w-auto{
     width: auto;
   }
@@ -74373,6 +74437,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .md\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -74829,6 +74898,11 @@ video {
   .group:hover .md\:group-hover\:bg-gray-d{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within{
@@ -75289,6 +75363,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-blue-a:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -75745,6 +75824,11 @@ video {
   .md\:hover\:bg-gray-d:hover{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .md\:hover\:bg-blue-a:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .md\:focus\:bg-transparent:focus{
@@ -76205,6 +76289,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .md\:focus\:bg-blue-a:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .md\:disabled\:bg-transparent:disabled{
     background-color: transparent;
   }
@@ -76661,6 +76750,11 @@ video {
   .md\:disabled\:bg-gray-d:disabled{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .md\:disabled\:bg-blue-a:disabled{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .md\:bg-opacity-0{
@@ -81564,14 +81658,6 @@ video {
     vertical-align: text-bottom;
   }
 
-  .md\:font-0{
-    font-family: Quicksand;
-  }
-
-  .md\:font-1{
-    font-family: sans-serif;
-  }
-
   .md\:font-sans{
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -81582,6 +81668,10 @@ video {
 
   .md\:font-mono{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .md\:font-Nunito{
+    font-family: Nunito Sans, sans-serif;
   }
 
   .md\:text-xs{
@@ -94143,6 +94233,10 @@ video {
     width: 24rem;
   }
 
+  .lg\:w-128{
+    width: 32rem;
+  }
+
   .lg\:w-auto{
     width: auto;
   }
@@ -103373,6 +103467,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -103829,6 +103928,11 @@ video {
   .group:hover .lg\:group-hover\:bg-gray-d{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within{
@@ -104289,6 +104393,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-blue-a:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -104745,6 +104854,11 @@ video {
   .lg\:hover\:bg-gray-d:hover{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-blue-a:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .lg\:focus\:bg-transparent:focus{
@@ -105205,6 +105319,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .lg\:focus\:bg-blue-a:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .lg\:disabled\:bg-transparent:disabled{
     background-color: transparent;
   }
@@ -105661,6 +105780,11 @@ video {
   .lg\:disabled\:bg-gray-d:disabled{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .lg\:disabled\:bg-blue-a:disabled{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .lg\:bg-opacity-0{
@@ -110564,14 +110688,6 @@ video {
     vertical-align: text-bottom;
   }
 
-  .lg\:font-0{
-    font-family: Quicksand;
-  }
-
-  .lg\:font-1{
-    font-family: sans-serif;
-  }
-
   .lg\:font-sans{
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -110582,6 +110698,10 @@ video {
 
   .lg\:font-mono{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .lg\:font-Nunito{
+    font-family: Nunito Sans, sans-serif;
   }
 
   .lg\:text-xs{
@@ -123143,6 +123263,10 @@ video {
     width: 24rem;
   }
 
+  .xl\:w-128{
+    width: 32rem;
+  }
+
   .xl\:w-auto{
     width: auto;
   }
@@ -132373,6 +132497,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -132829,6 +132958,11 @@ video {
   .group:hover .xl\:group-hover\:bg-gray-d{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within{
@@ -133289,6 +133423,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-blue-a:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -133745,6 +133884,11 @@ video {
   .xl\:hover\:bg-gray-d:hover{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .xl\:hover\:bg-blue-a:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .xl\:focus\:bg-transparent:focus{
@@ -134205,6 +134349,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .xl\:focus\:bg-blue-a:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .xl\:disabled\:bg-transparent:disabled{
     background-color: transparent;
   }
@@ -134661,6 +134810,11 @@ video {
   .xl\:disabled\:bg-gray-d:disabled{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .xl\:disabled\:bg-blue-a:disabled{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .xl\:bg-opacity-0{
@@ -139564,14 +139718,6 @@ video {
     vertical-align: text-bottom;
   }
 
-  .xl\:font-0{
-    font-family: Quicksand;
-  }
-
-  .xl\:font-1{
-    font-family: sans-serif;
-  }
-
   .xl\:font-sans{
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -139582,6 +139728,10 @@ video {
 
   .xl\:font-mono{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .xl\:font-Nunito{
+    font-family: Nunito Sans, sans-serif;
   }
 
   .xl\:text-xs{
@@ -152143,6 +152293,10 @@ video {
     width: 24rem;
   }
 
+  .\32xl\:w-128{
+    width: 32rem;
+  }
+
   .\32xl\:w-auto{
     width: auto;
   }
@@ -161373,6 +161527,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -161829,6 +161988,11 @@ video {
   .group:hover .\32xl\:group-hover\:bg-gray-d{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-blue-a{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within{
@@ -162289,6 +162453,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-blue-a:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -162745,6 +162914,11 @@ video {
   .\32xl\:hover\:bg-gray-d:hover{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:hover\:bg-blue-a:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus\:bg-transparent:focus{
@@ -163205,6 +163379,11 @@ video {
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus\:bg-blue-a:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
+  }
+
   .\32xl\:disabled\:bg-transparent:disabled{
     background-color: transparent;
   }
@@ -163661,6 +163840,11 @@ video {
   .\32xl\:disabled\:bg-gray-d:disabled{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:disabled\:bg-blue-a:disabled{
+    --tw-bg-opacity: 1;
+    background-color: rgba(69, 86, 172, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-opacity-0{
@@ -168564,14 +168748,6 @@ video {
     vertical-align: text-bottom;
   }
 
-  .\32xl\:font-0{
-    font-family: Quicksand;
-  }
-
-  .\32xl\:font-1{
-    font-family: sans-serif;
-  }
-
   .\32xl\:font-sans{
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -168582,6 +168758,10 @@ video {
 
   .\32xl\:font-mono{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .\32xl\:font-Nunito{
+    font-family: Nunito Sans, sans-serif;
   }
 
   .\32xl\:text-xs{
@@ -174605,3 +174785,5 @@ video {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
+

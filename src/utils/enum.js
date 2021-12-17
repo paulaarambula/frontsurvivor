@@ -1,7 +1,7 @@
 export const Enum_Rol = {
-    ADMINISTRADOR: "Administrador",
-    ESTUDIANTE: "Estudiante",
-    LIDER: "Líder",
+    ADMINISTRADOR: "ADMINISTRADOR",
+    ESTUDIANTE: "ESTUDIANTE",
+    LIDER: "LIDER",
 };
 
 export const Enum_Status = {
@@ -10,21 +10,33 @@ export const Enum_Status = {
     NO_AUTORIZADO: "No autorizado",
 };
 
+export const Enum_Status_Filter_Leader = {
+    AUTORIZADO: "Autorizado",
+    NO_AUTORIZADO: "No autorizado",
+};
+
 export const Enum_ProjectStatus = {
-    ACTIVO:"Activo",
-    INACTIVO: "Inactivo",
+    ACTIVO:"ACTIVO",
+    INACTIVO: "INACTIVO",
 
 };
 export const Enum_ProjectStage = {
     INICIADO: "Iniciado",
     EN_DESARROLLO: "En desarrollo",
     TERMINADO: "Terminado",
-    NULO: 'Nulo'
+    NULO: 'nulo'
 };
 
 export const Enum_ObjetiveType = {
-    GENERAL: "General",
-    ESPECIFICO: "Específico",
+    GENERAL: "GENERAL",
+    ESPECIFICO: "ESPECIFICO",
+
+}
+
+export const Enum_StatusIncription =  {
+    ACEPTADA: "ACEPTADA",
+    RECHAZADA: "RECHAZADA",
+    PENDIENTE: "PENDIENTE",
 
 }
 
