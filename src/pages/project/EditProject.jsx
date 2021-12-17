@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import Card from "../../components/card/Card";
 import useFormData from "../../hook/useFormData";
 import { GET_PROJECT_BY_ID } from "../../graphql/project/queries";
 import { EDIT_PROJECT } from "../../graphql/project/mutation";
-import { EDIT_INSCRIPTION_ENDDATE_NOW } from "../../graphql/incriptions/mutation";
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import TitleCard from "../../components/card/TitleCard";
 import Line from "../../components/Line";
 import Input from "../../components/Input";
+import TextArea from "../../components/inputs/TextArea";
 import ButtonLoading from "../../components/buttons/ButtonLoading";
 import DropDown from "../../components/DropDown";
 import { Enum_ProjectStatus, Enum_ProjectStage } from "../../utils/enum";
 import Header from "../../components/Header";
 import alerts from "../../utils/iziToast/alerts";
-
+import { Link, Redirect } from "react-router-dom";
 
 const EditProject = () => {
   const { form, formData, updateFormData } = useFormData(null);
-  const _id_ = useParams();
-  const _id = _id_["_id"];
+  const _id_  = useParams();
+  const _id =  _id_["_id"]
   const {
     data: queryData,
     error: queryError,
@@ -33,77 +33,43 @@ const EditProject = () => {
     { data: mutationData, loading: mutationLoading, error: mutationError },
   ] = useMutation(EDIT_PROJECT);
 
-  const [
-    editInscriptionEndDate,
-    {
-      data: mutationDataInscription,
-      loading: mutationLoadingInscription,
-      error: mutationErrorInscription,
-    },
-  ] = useMutation(EDIT_INSCRIPTION_ENDDATE_NOW);
+  const destruturingOnlyBudget  = () =>{ 
+    const {nameProject, startDate, endDate, stageProject, statusProject, ...data} = formData
+    const rest = {budget: parseFloat(data.budget)};
+    return rest
+  }
 
-  const listIdInscriptionsBYProjects = () => {
-    const list = [];
-    if (queryData) {
-      queryData["DetailProject"].inscription.map((u) => {
-        list.push(u._id);
-      });
-    }
-    return list;
-  };
+  const destruturingOnlyRest  = () =>{ 
+    const {budget, ...rest} = formData
+    return rest
+  }
 
-  const listIdInscrip = listIdInscriptionsBYProjects();
+  const mixData = () => {
+    const newData = {...destruturingOnlyBudget(), ...destruturingOnlyRest()}
+    return newData
+  }
 
-  // console.log("listIdInscrip", listIdInscrip);
   const submitForm = (e) => {
     e.preventDefault();
-    formData["budget"]=parseFloat(formData["budget"]);
-    if (
-      formData["statusProject"] === "ACTIVO" &&
-      formData["stageProject"] === "NULO"
-    ) {
-      formData["stageProject"] = "INICIADO";
-      const yourDate = new Date(Date.now());
-      formData["startDate"] = yourDate.toISOString().split()[0];
-      console.log("formData", formData);
+    if(formData["statusProject"] === "ACTIVO"){
+        console.log("Ejecutar mutación en las incripciones, para agregar la fecha actual a todos las incripciones")
     }
-    if (formData["statusProject"] === "INACTIVO") {
-      //Si cambia el estado del proyecto a estado inactivo, todas las fechas de finalización del las inscripcines asociadas a ese proyecto y que esten vacias, quedan automaticamente con la fecha actual.
-      listIdInscrip.map((u) => {
-        editInscriptionEndDate({ variables: { _id: u } });
-      });
-    }
-    if (formData["stageProject"] === "TERMINADO") {
-      // Si la fase del proyecto cambia a terminado, el estado cambia a inactivo
-      formData["statusProject"] = "INACTIVO";
-      const yourDate = new Date(Date.now());
-      formData["endDate"] = yourDate.toISOString().split()[0];
-
+    // console.log("ss", mixData())
       editProject({
         variables: {
           _id,
-          fields: formData,
-        },
+          fields: mixData(),
+        }
+    
       });
-      listIdInscrip.map((u) => {
-        editInscriptionEndDate({ variables: { _id: u } });
-      });
-    } else {
-      editProject({
-        variables: {
-          _id,
-          fields: formData,
-        },
-      });
-    } 
+      
   };
-
   useEffect(() => {
     if (mutationData) {
       alerts.alertSucees("Usuario modificado correctamente");
-      //   redireccionar
+      <Link to="admin/project/index"/>
     }
-  }, [mutationData, mutationDataInscription]);
+  }, [mutationData]);
 
   useEffect(() => {
     if (mutationError) {
@@ -118,7 +84,6 @@ const EditProject = () => {
     return <div>Cargando....</div>;
   }
   console.log("data: ", queryData);
-
   return (
     <Card>
       <TitleCard title="Nuevo Proyecto" />
@@ -150,8 +115,25 @@ const EditProject = () => {
               defaultValue={queryData && queryData.DetailProject.budget}
             />
           </div>
-       
-        
+        </div>
+
+        <div className="flex flex-row">
+          <div className="flex-1 mr-1">
+            <Input
+              type="date"
+              name="startDate"
+              label="Fecha inicio"
+              defaultValue={queryData && queryData.DetailProject.startDate.slice(0,10)}
+            />
+          </div>
+          <div className="flex-1 mr-1">
+            <Input
+              type="date"
+              name="endDate"
+              label="Fecha Fin"
+              defaultValue={queryData && queryData.DetailProject.endDate.slice(0,10)}
+            />
+          </div>
         </div>
 
         <div className="flex flex-row">
