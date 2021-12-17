@@ -32,7 +32,7 @@ import EditProject from "./pages/project/EditProject";
 //   uri: "https://api-proyecta-tic.herokuapp.com/graphql"
 // })
 const httpLink = createHttpLink({
-  uri: "https://survivorbackend.herokuapp.com//graphql",
+  uri: "https://survivorbackend.herokuapp.com/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
