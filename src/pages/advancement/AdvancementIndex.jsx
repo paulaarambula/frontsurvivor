@@ -4,7 +4,7 @@ import Card from "../../components/card/Card";
 import ButtonBorder from "../../components/buttons/ButtonBorder";
 import CardSmall from "../../components/card/CardSmall";
 import Line from "../../components/Line";
-import { GET_ADVANCEMENTS  } from "../../graphql/advancement/query";
+import { GET_ADVANCEMENTS } from "../../graphql/advancement/query";
 import { GET_ADVANCEMENT_BY_ID } from "../../graphql/advancement/query";
 import { editIcon, checkIcon, slashIcon } from "../../utils/icons";
 import { EDIT_OBSERVATION, EDIT_DESCRIPTION } from "../../graphql/advancement/mutation";
@@ -79,11 +79,11 @@ const AdvancementIndex = () => {
   useEffect(() => {
     if (mutationData) {
       alerts.alertSucees("modificada correctamente");
-      //   redireccionar
+      // redireccionar
     }
     if (mutationDataDes) {
       alerts.alertSucees("modificada correctamente");
-      //   redireccionar
+      // redireccionar
     }
   }, [mutationData, mutationDataDes]);
 
@@ -109,7 +109,7 @@ const AdvancementIndex = () => {
                   <span className="font-bold text-lg text-gray-75">
                     {u.project.nameProject.toUpperCase()}
                   </span>
-                  {!editDes ?  <ButtonBorder
+                  {!editDes ? <ButtonBorder
                     name="Modificar"
                     set={setEditDes}
                     colorBorder={"border-tic-25"}
@@ -250,10 +250,10 @@ const EditObservation = ({ p, u, setId, _id }) => {
   const mutation = () => {
     setId(u);
     // editObservation({
-    //   variables: {
-    //     _id,
-    //     observations: formData.observations,
-    //   },
+    // variables: {
+    // _id,
+    // observations: formData.observations,
+    // },
     // });
   };
 
@@ -276,7 +276,8 @@ const EditObservation = ({ p, u, setId, _id }) => {
             name="observations"
             required={true}
             defaultValue={p}
-            onChange={(e) => setObervationInput(e.target.value)}
+
+onChange={(e) => setObervationInput(e.target.value)}
             className="w-full focus:outline-none p-2 border border-tic-50 rounded-xl"
           />
 
