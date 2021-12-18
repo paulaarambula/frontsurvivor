@@ -1,21 +1,20 @@
 import { gql } from "@apollo/client";
 
 const GET_ADVANCEMENTS = gql`
-  query Query {
-    Advancements {
-      _id
-      date
-      description
-      observations
-      project {
-      nameProject
-    }
+  query Advancements {
+  Advancements {
+    _id
+    date
+    description
+    observations
     createdBy {
       name
-      lastname
     }
+    project {
+      nameProject
     }
   }
+}
 `;
 
 const GET_ADVANCEMENT_BY_ID = gql`

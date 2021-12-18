@@ -32,13 +32,15 @@ import EditInscriptions from "./pages/inscriptions/EditInscriptions";
 import AdvancementIndex from "./pages/advancement/AdvancementIndex";
 import EditAdvancement from "./pages/advancement/EditAdvancement";
 import Testk from "./pages/project/Testk";
+import Hh from "./pages/advancement/hh";
 
-// const httpLink = createHttpLink({
-//   uri: "https://api-proyecta-tic.herokuapp.com/graphql"
-// })
 const httpLink = createHttpLink({
   uri: "https://survivorbackend.herokuapp.com/graphql",
 });
+// const httpLink = createHttpLink({
+//   uri: "http://localhost:4001/graphql",
+// });
+
 
 const authLink = setContext((_, { headers }) => {
   const token = JSON.parse(localStorage.getItem("token"));
@@ -109,6 +111,7 @@ function App() {
                   <Route path="edit/inscriptions/:_id" element={<EditInscriptions/>} />
                   <Route path="inscriptions/index" element={<InscriptionsIndex/>} />
                   <Route path="advancement/index" element={<AdvancementIndex/>}/>
+                  <Route path="hola" element={<Hh/>}/>
                   <Route path="edit/advancement/:_id" element={<EditAdvancement/>}/>
                   <Route path="test" element={<Testk/>}/>
                 </Route>

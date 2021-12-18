@@ -37,9 +37,22 @@ const EDIT_ADVANCEMENT_BY_ID = gql`
   }
 `;
 
+
+const EDIT_DESCRIPTION = gql`
+ mutation EditAdvancementOnly($_id: String!, $description: String) {
+  editAdvancementOnly(_id: $_id, description: $description) {
+    _id
+  }
+}
+`;
+
+
+
+
+
 const EDIT_OBSERVATION = gql`
-  mutation EditObservation($id: String!, $observations: [String]) {
-  editObservation(_id: $id, observations: $observations) {
+  mutation EditObservation($_id: String!, $observations: [String]) {
+  editObservation(_id: $_id, observations: $observations) {
     _id
   }
 }
@@ -50,4 +63,4 @@ const EDIT_OBSERVATION = gql`
 
 
 
-export { CREATE_ADVANCEMENT, EDIT_ADVANCEMENT_BY_ID, EDIT_OBSERVATION };
+export { CREATE_ADVANCEMENT, EDIT_ADVANCEMENT_BY_ID, EDIT_OBSERVATION, EDIT_DESCRIPTION };
