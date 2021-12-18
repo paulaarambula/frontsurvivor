@@ -70,7 +70,7 @@ const PrivateLayouth = () => {
             onMouseEnter={() => {
               MouseEnter();
             }} >
-          <div className="overflow-scroll">
+          <div className="overflow-auto">
             <Content>
               <Outlet />
             </Content>

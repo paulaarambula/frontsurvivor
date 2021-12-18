@@ -1,34 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PrivateComponent from "./PrivateComponents";
-import {advanceIcon, inscriptionsIcon, ProjectIcon, userIcon, dashboardIcon} from "../utils/icons";
+import {
+  advanceIcon,
+  inscriptionsIcon,
+  ProjectIcon,
+  userIcon,
+  dashboardIcon,
+} from "../utils/icons";
 
-const SideBar = ({ setItemsSidebar, movilResponsiveButton, setItem}) => {
-  
+const SideBar = ({ setItemsSidebar, movilResponsiveButton, setItem }) => {
   return (
-    <div className={`${movilResponsiveButton ? "" : "hidden"} sm:flex flex-col bg-white w-27 h-screen rounded-lg shadow-lg rounded-xl text-gray-75`}>
-      <div className="flex-1 bg-white shadow-lg border-gray-50 w-27 rounded-xl z-10 sm:flex h-full hidden">
-      <div className="overflow-scroll">
+    <div
+      className={`${
+        movilResponsiveButton ? "" : "hidden"
+      } sm:flex flex-col bg-white w-27 h-screen rounded-lg shadow-lg rounded-xl text-gray-50`}
+    >
+      {/* <div className="flex-1 bg-white shadow-lg border-gray-50 w-27 rounded-xl z-10 sm:flex h-full hidden"> */}
+      <div className="overflow-auto">
         <div className="divide-y divide-gray-100 text-5xl w-full">
-          
-            <Items
-              icon={dashboardIcon()}
-              items="Dashboard"
-              setItemsSidebar={setItemsSidebar}
-              _id="dashboard"
-              setItem={setItem}
-              path="/"
-            />
-  
-          <PrivateComponent rolesList={["ADMINISTRADOR", "LIDER"]}>
           <Items
-            icon={userIcon()}
-            items="Usuarios"
+            icon={dashboardIcon()}
+            items="Dashboard"
             setItemsSidebar={setItemsSidebar}
-            _id="user"
+            _id="dashboard"
             setItem={setItem}
-            path="/admin/user/index"
+            path="/"
           />
+
+          <PrivateComponent rolesList={["ADMINISTRADOR", "LIDER"]}>
+            <Items
+              icon={userIcon()}
+              items="Usuarios"
+              setItemsSidebar={setItemsSidebar}
+              _id="user"
+              setItem={setItem}
+              path="/admin/user/index"
+            />
           </PrivateComponent>
           <Items
             icon={ProjectIcon()}
@@ -38,15 +46,15 @@ const SideBar = ({ setItemsSidebar, movilResponsiveButton, setItem}) => {
             setItem={setItem}
             path="/admin/project/index"
           />
-           <Items
-            icon = {advanceIcon()}
+          <Items
+            icon={advanceIcon()}
             items="Avances"
             setItemsSidebar={setItemsSidebar}
             _id="advance"
             setItem={setItem}
-            path="/admin/advances/index"
+            path="/admin/advancement/index"
           />
-           <Items
+          <Items
             icon={inscriptionsIcon()}
             items="Inscripciones"
             setItemsSidebar={setItemsSidebar}
@@ -56,13 +64,11 @@ const SideBar = ({ setItemsSidebar, movilResponsiveButton, setItem}) => {
           />
         </div>
       </div>
-      </div>
-      
     </div>
   );
 };
 
-const Items = ({ icon, items, setItemsSidebar, _id, setItem , path}) => {
+const Items = ({ icon, items, setItemsSidebar, _id, setItem, path }) => {
   const ejct = () => {
     // setItemsSidebar(true);
     setItem(_id);
@@ -76,11 +82,7 @@ const Items = ({ icon, items, setItemsSidebar, _id, setItem , path}) => {
         <button onMouseEnter={() => ejct()}>
           <Link to={path}>{icon}</Link>
         </button>
-        <span
-          className="text-xs mt-2"
-        >
-          {items}
-        </span>
+        <span className="text-xs mt-2">{items}</span>
       </div>
     </div>
   );

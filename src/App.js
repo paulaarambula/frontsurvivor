@@ -37,7 +37,7 @@ import Testk from "./pages/project/Testk";
 //   uri: "https://api-proyecta-tic.herokuapp.com/graphql"
 // })
 const httpLink = createHttpLink({
-  uri: "https://survivorbackend.herokuapp.com/graphql",
+  uri: "http://localhost:4001/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {

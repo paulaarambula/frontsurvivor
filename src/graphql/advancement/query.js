@@ -7,6 +7,13 @@ const GET_ADVANCEMENTS = gql`
       date
       description
       observations
+      project {
+      nameProject
+    }
+    createdBy {
+      name
+      lastname
+    }
     }
   }
 `;

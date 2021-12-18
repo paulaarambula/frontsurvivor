@@ -37,4 +37,17 @@ const EDIT_ADVANCEMENT_BY_ID = gql`
   }
 `;
 
-export { CREATE_ADVANCEMENT, EDIT_ADVANCEMENT_BY_ID };
+const EDIT_OBSERVATION = gql`
+  mutation EditObservation($id: String!, $observations: [String]) {
+  editObservation(_id: $id, observations: $observations) {
+    _id
+  }
+}
+`;
+
+
+
+
+
+
+export { CREATE_ADVANCEMENT, EDIT_ADVANCEMENT_BY_ID, EDIT_OBSERVATION };
